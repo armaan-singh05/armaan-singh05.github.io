@@ -7,4 +7,4 @@ My personal engineering portfolio
   There should be whitespace between paragraphs. 
 We recommend including a README, or a file with information about your project.  
 
-I want to use [this]https://github.com/pages-themes/minimal theme for the website
+I want to use [this](https://github.com/pages-themes/minimal) theme for the website
