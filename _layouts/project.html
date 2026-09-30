@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<article class="container project-page">
+  <a class="back" href="{{ '/#projects' | relative_url }}">← All projects</a>
+
+  <header class="project-header">
+    <p class="meta">
+      {% if page.course %}<span>{{ page.course }}</span> · {% endif %}{{ page.date | date: '%B %Y' }}
+    </p>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}<p class="lead">{{ page.summary }}</p>{% endif %}
+
+    {% if page.tags %}
+    <ul class="tags">
+      {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if page.links %}
+    <p class="links">
+      {% for link in page.links %}
+      <a class="button" href="{{ link.url | relative_url }}" target="_blank" rel="noopener">{{ link.label }} ↗</a>
+      {% endfor %}
+    </p>
+    {% endif %}
+  </header>
+
+  {% if page.image %}
+  <img class="cover" src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+  {% endif %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {% if page.gallery %}
+  <section class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      {% for pic in page.gallery %}
+      <figure>
+        <a href="{{ pic.src | relative_url }}" target="_blank" rel="noopener">
+          <img src="{{ pic.src | relative_url }}" alt="{{ pic.caption | default: page.title }}" loading="lazy">
+        </a>
+        {% if pic.caption %}<figcaption>{{ pic.caption }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</article>
