@@ -1,0 +1,58 @@
+# ------------------------------------------------------------------
+#  Everything on the home page (except projects) comes from this file.
+#  Edit text here, save, commit — the site updates in a minute or two.
+#  Delete a line / item to hide it.
+# ------------------------------------------------------------------
+
+name: Armaan Singh
+headline: Engineering Student · Simon Fraser University
+location: Surrey, BC
+availability: Available for a 12-month co-op
+
+about: >-
+  I'm a Bachelor of Applied Science engineering student at SFU (CGPA 4.02/4.33)
+  who enjoys working close to the hardware — from designing a RISC-V processor in VHDL
+  and building real-time embedded systems in C++, to designing and testing analog filters
+  and op-amps on the bench.
+
+email: asa560@sfu.ca
+linkedin: https://www.linkedin.com/in/armaan05
+github: https://github.com/armaan-singh05
+resume: /assets/Armaan_Singh_Resume.pdf   # replace this PDF to update your resume
+
+skills:
+  - group: Software & Firmware
+    items: [C/C++, VHDL, TCL scripting, MATLAB, Linux / Embedded OS, RISC-V Assembly]
+  - group: Hardware
+    items: [BeagleY-AI, Oscilloscopes, Function Generators, DMM, Power Supplies, SMD Soldering]
+  - group: Tools
+    items: [Quartus, ModelSim, Cadence OrCAD, LTspice, ngSpice, Simulink, SOLIDWORKS, VS Code, Android Studio]
+
+experience:
+  - role: AI Contributor / Data Annotator
+    org: DataAnnotation
+    place: Remote
+    dates: Jan 2026 – Present
+    points:
+      - Evaluate outputs from advanced large language models to improve accuracy, safety, instruction-following, code quality and helpfulness.
+      - Complete agentic coding tasks focused on debugging, testing and optimizing hardware/software interaction code.
+  - role: Teaching Assistant
+    org: Kumon
+    place: Surrey, BC
+    dates: Sep 2021 – Sep 2023
+    points:
+      - Assessed student work and gave constructive feedback aligned with instructor guidelines.
+      - Documented student progress to tailor support for individual learning outcomes.
+      - Explained math and reading concepts to students with a wide range of learning styles.
+
+education:
+  - degree: Bachelor of Applied Science, Engineering
+    school: Simon Fraser University — Burnaby, BC
+    dates: Sep 2023 – Present
+    note: "CGPA: 4.02 / 4.33"
+
+awards:
+  - SFU President's and Dean's Honour Roll
+  - SFU Open Scholarship
+  - BC Achievement Scholarship for Academic Excellence
+  - Parent Advisory Council Scholarship

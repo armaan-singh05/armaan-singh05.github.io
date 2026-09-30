@@ -1,0 +1,92 @@
+---
+layout: default
+title: Armaan Singh
+---
+{% assign p = site.data.profile %}
+
+<section class="container hero">
+  <p class="eyebrow">{{ p.headline }}</p>
+  <h1>Hi, I'm {{ p.name }}.</h1>
+  <p class="lead">{{ p.about }}</p>
+  <p class="hero-meta">📍 {{ p.location }}{% if p.availability %} · <strong>{{ p.availability }}</strong>{% endif %}</p>
+  <p class="links">
+    <a class="button primary" href="{{ p.resume | relative_url }}" target="_blank" rel="noopener">View resume</a>
+    {% if p.linkedin %}<a class="button" href="{{ p.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+    {% if p.github %}<a class="button" href="{{ p.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+    {% if p.email %}<a class="button" href="mailto:{{ p.email }}">Email</a>{% endif %}
+  </p>
+</section>
+
+<section class="container section" id="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    {% assign projects = site.projects | sort: 'date' | reverse %}
+    {% for project in projects %}
+    <a class="card" href="{{ project.url | relative_url }}">
+      {% if project.image %}
+      <img class="card-img" src="{{ project.image | relative_url }}" alt="{{ project.title }}" loading="lazy">
+      {% else %}
+      <div class="card-img placeholder"><span>{{ project.course | default: project.title }}</span></div>
+      {% endif %}
+      <div class="card-body">
+        <p class="meta">{% if project.course %}{{ project.course }} · {% endif %}{{ project.date | date: '%b %Y' }}</p>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.summary }}</p>
+        {% if project.tags %}
+        <ul class="tags">{% for tag in project.tags limit: 4 %}<li>{{ tag }}</li>{% endfor %}</ul>
+        {% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container section" id="experience">
+  <h2>Experience</h2>
+  {% for job in p.experience %}
+  <div class="entry">
+    <div class="entry-head">
+      <h3>{{ job.role }} <span class="muted">— {{ job.org }}{% if job.place %}, {{ job.place }}{% endif %}</span></h3>
+      <span class="dates">{{ job.dates }}</span>
+    </div>
+    <ul>{% for pt in job.points %}<li>{{ pt }}</li>{% endfor %}</ul>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="container section" id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    {% for s in p.skills %}
+    <div>
+      <h3>{{ s.group }}</h3>
+      <ul class="tags">{% for item in s.items %}<li>{{ item }}</li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container section two-col">
+  <div>
+    <h2>Education</h2>
+    {% for e in p.education %}
+    <div class="entry">
+      <h3>{{ e.degree }}</h3>
+      <p class="muted">{{ e.school }}<br>{{ e.dates }}{% if e.note %} · {{ e.note }}{% endif %}</p>
+    </div>
+    {% endfor %}
+  </div>
+  <div>
+    <h2>Awards</h2>
+    <ul class="awards">{% for a in p.awards %}<li>{{ a }}</li>{% endfor %}</ul>
+  </div>
+</section>
+
+<section class="container section contact" id="contact">
+  <h2>Get in touch</h2>
+  <p>I'm looking for co-op opportunities in embedded systems, hardware and firmware. The best way to reach me is by email.</p>
+  <p class="links">
+    {% if p.email %}<a class="button primary" href="mailto:{{ p.email }}">{{ p.email }}</a>{% endif %}
+    {% if p.linkedin %}<a class="button" href="{{ p.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+  </p>
+</section>
